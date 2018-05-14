@@ -15,8 +15,11 @@
         if (!isset($meal, $location, $rating, $review) || empty($meal) || empty($location))
             exit("Fields not proper.");
 
-        $query = $conn->prepare("INSERT INTO meals (meal, location, rating, review) VALUES (?, ?, ?, ?)");
-        $query->bindParam("ssis", $meal, $location, $rating, $review);
+        $query = $conn->prepare("INSERT INTO meals (meal, location, rating, review) VALUES (:meal, :location, :rating, :review)");
+        $query->bindParam(":meal", $meal, PDO::PARAM_STR, 255);
+        $query->bindParam(":location", $location, PDO::PARAM_STR, 255);
+        $query->bindParam(":rating", $rating, PDO::PARAM_INT);
+        $query->bindParam(":review", $review, PDO::PARAM_STR, 65535);
         $query->execute();
 
         $query = null;
