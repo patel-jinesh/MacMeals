@@ -19,8 +19,8 @@
         $query->bind_param("ssis", $meal, $location, $rating, $review);
         $query->execute();
 
-        $query->close();
-        $conn->close();
+        $query = null;
+        $conn = null;
 
         echo "Success";
     } catch (PDOException $e) {
