@@ -12,7 +12,7 @@
         $rating = $_POST["rating"];
         $review = $_POST["review"];
 
-        if (!isset($meal, $lcoation, $rating, $review) || empty($meal) || empty($location))
+        if (!isset($meal, $location, $rating, $review) || empty($meal) || empty($location))
             exit("Fields not proper.");
 
         $query = $conn->prepare("INSERT INTO meals (meal, location, rating, review) VALUES (?, ?, ?, ?)");
