@@ -16,7 +16,7 @@
             exit("Fields not proper.");
 
         $query = $conn->prepare("INSERT INTO meals (meal, location, rating, review) VALUES (?, ?, ?, ?)");
-        $query->bind_param("ssis", $meal, $location, $rating, $review);
+        $query->bindParam("ssis", $meal, $location, $rating, $review);
         $query->execute();
 
         $query = null;
