@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>MacMeals</title>
     <script src="load.js"></script>
+    <script src="addmeal.js"></script>
 </head>
 
 <body>
@@ -12,6 +13,15 @@
     <header>MacMeals</header>
 
     <pre id="data">Data</pre>
+
+    <form name="addmeal" action="/addmeal.php" onsubmit="return addmeal()" method="post">
+        Meal:
+        <input type="text" name="meal" required> Location:
+        <input type="text" name="location" required> Rating:
+        <input type="range" name="rating" required min="0" max="10"> Review:
+        <input type="text" name="review">
+        <input type="submit" value="Submit">
+    </form>
 
     <footer>Footer</footer>
 </body>
