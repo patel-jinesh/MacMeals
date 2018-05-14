@@ -12,6 +12,9 @@
         $rating = $_POST["rating"];
         $review = $_POST["review"];
 
+        if (!isset($meal, $lcoation, $rating, $review) || empty($meal) || empty($location))
+            exit("Fields not proper.");
+
         $query = $conn->prepare("INSERT INTO meals (meal, location, rating, review) VALUES (?, ?, ?, ?)");
         $query->bind_param("ssis", $meal, $location, $rating, $review);
         $query->execute();
