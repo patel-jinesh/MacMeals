@@ -3,25 +3,31 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MacMeals</title>
     <script src="load.js"></script>
     <script src="addmeal.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
 <body>
+    <header>
+        MacMeals
+        <div>
+            <input type="text" placeholder="Search">
+            <input type="submit" value=" ">
+        </div>
+    </header>
 
-    <header>MacMeals</header>
-
-    <pre id="data">Data</pre>
-
-    <form name="addmeal" action="/addmeal.php" onsubmit="return addmeal()" method="post">
-        Meal:
-        <input type="text" name="meal" required> Location:
-        <input type="text" name="location" required> Rating:
-        <input type="range" name="rating" required min="0" max="10"> Review:
-        <input type="text" name="review">
-        <input type="submit" value="Submit">
-    </form>
+    <table id="data">
+        <tr>
+            <th>Meal</th>
+            <th>Location</th>
+            <th>Rating</th>
+            <th>Review</th>
+            <th>Date</th>
+        </tr>
+    </table>
 
     <footer>Footer</footer>
 </body>
