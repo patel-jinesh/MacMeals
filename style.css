@@ -62,7 +62,7 @@ footer {
     bottom: 0px;
     height: 40px;
     width: calc(100% - 10px);
-    z-index: 9999999;
+    z-index: 99999999;
     background-color: #444444;
     color: white;
     text-align: center;
